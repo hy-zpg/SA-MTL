@@ -25,12 +25,19 @@ Explanation:
 * Multi-task hyperparameter: --P_loss_weights=1 --E_loss_weights=1 [weights of different tasks]
 * Core methods: 
    $ --is_naive=True: not generate pseudo labels
+
    $ --is_distilled=True, --distill_t: only leverage distilled knowledge to preserve information, distill_t is the temperature
+
    $ --is_pesudo=True: generateb pseudo labels to augment infromation
+
    $ --is_interpolation=True: generate interpolated labels combining distilled knowledge and pseudo labels with selected weights, otherwise adopt hard selection method to select high-confidence pseudo labels to augment information, while distilled knowledge is adopt to preserver information for those low-confidence pseudo labels 
-   --selection_threshold: select pseudo labels for hard selection method
+
+   $ --selection_threshold: select pseudo labels for hard selection method
+
    $ --is_pesudo_confidence=True: leveage confidence score to generate pseudo labels weights
+
    $ --is_pesudo_density=True, --density_t=0.6: leverage local density to generate pseudo labels weights
+
    $ --is_pesudo_distribution=True, --cluster_k=3 : leverage MMD and EMD to generate pseudo labels weights
 
 Comparison methods:
