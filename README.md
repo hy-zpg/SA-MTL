@@ -1,14 +1,14 @@
-## data:
+## Data preparation:
    * storing datasets
    * prepare images-labels pairs
    * generating csv file for generator
 
-## utils:
+## Utils:
    stl: prepare data generator for single-task learning
    confusion: prepare data generator for multi-task learning with joint training method
    alternative: prepare data generator for single-task learning with alternative triaing method
 
-## training scripts for different methods
+## Comparison between SA-MTL and other multi-task learning methods, as well as single-task learning
 ### Alternative-MTL:
 E,P: emotion, pose
 
@@ -105,7 +105,15 @@ python STL_general_train.py --dataset=SFEW[expw,ferplus] --model=vggFace --epoch
 python STL_general_train.py --dataset=aflw --model=vggFace --epoch=64 --batch_size=32 --is_augmentation=False --is_dropout=False --is_bn=False --weights_decay=0 --is_freezing=False --no_freezing_epoch=0 --task_type=10
 ```
 
-
+## Demo for emotion, pose, gender and age recognition
+* image: 
+``` bash
+python final_image_demo.py
+``` 
+* video: 
+``` bash
+python final_video_demo.py
+``` 
 
 
 
